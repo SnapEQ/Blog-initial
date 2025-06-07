@@ -1,4 +1,5 @@
 import type { Route } from "./+types/article";
+import "./article.css"
 
 export async function loader({ params }: Route.LoaderArgs) {
 	const articleId = params.articleId;

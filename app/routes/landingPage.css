@@ -1,0 +1,41 @@
+.content-container, .footer{
+    width: 100%;
+    padding: 0px 11% 0px 11%;
+    border: 1px solid green;
+}
+
+
+
+.content-tile{
+    display: flex;
+    align-items: center;
+    border: 1px solid red;
+    height: 100%;
+    width: 100%;
+}
+
+.content-tile > .content-intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 47vh;
+    padding-top: 13vh;
+    border-right:1px solid orange ;
+    padding-right: 10vw;
+    width: 65vw;
+    
+}
+
+.content-tile > .content-anim-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 21vh;
+    height: 100%;
+    width: 35vw;
+}
+
+.content-tile > .content-anim-container > p{
+    font-size: 6rem;
+}
+

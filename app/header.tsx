@@ -1,14 +1,23 @@
-export default function Header() {
-	const buttons: string[] = ["Home", "Blog", "Projects", "Contact"];
+import { NavLink } from "react-router";
+import clsx from "clsx";
 
-	const buttonElements = buttons.map((btn: string) => (
-		<button 
-		key={btn} 
-		className='navbar-button'
-		>
-			{btn}
-		</button>
-	));
+export default function Header() {
+	const buttons: string[] = ["Home", "Articles", "Projects", "Contact"];
+
+	const buttonElements = buttons.map((btn: string) => {
+		const path = btn.toLowerCase() === "home" ? "/" : `/${btn.toLowerCase()}`;
+
+		return (
+			<NavLink
+				key={btn}
+				to={path}
+				className={({ isActive }) =>
+					clsx("navbar-button", { active: isActive })
+				}>
+				{btn}
+			</NavLink>
+		);
+	});
 
 	return (
 		<>
@@ -16,12 +25,10 @@ export default function Header() {
 				<div className='top-banner'>Hello</div>
 				<div className='navbar'>
 					<div className='logo'>
-						{/*  insert image here */}
+						<img src='app/assets/silverS.jpg' alt='silversurfer image' />
 						<p>SnapEQ</p>
 					</div>
-					<div className='buttons-container'>
-						{buttonElements}
-					</div>
+					<div className='buttons-container'>{buttonElements}</div>
 				</div>
 			</div>
 		</>

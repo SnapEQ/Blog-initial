@@ -1,5 +1,5 @@
 import type { Route } from "./+types/landingPage";
-
+import "./landingPage.css";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -8,9 +8,60 @@ export function meta({}: Route.MetaArgs) {
 	];
 }
 
+
+
+
+
 export default function LandingPage() {
 	return (
-  <>
-	<p>Hey</p>
-  </>);
+		<>
+			<div className='content-container'>
+				<div className='content-tile'>
+					<div className='content-intro-container'>
+						<div className='intro'>
+							<p>Your Knowledge About Me Begins Here</p>
+							<div className='intro-title'>
+								<p className='big-text'>Official SnapEQ's blog</p>
+								<p className='small-text'>
+									Dive into the world of my coding journey and see what my
+									current struggles are
+								</p>
+							</div>
+						</div>
+					</div>
+					<div className='content-anim-container'>
+						<p>&lt;/&gt;</p>
+					</div>
+				</div>
+				<div className='content-tiles'>
+					<div className='tile-about-me'>
+						<div className='about-me-text-container'>
+							<p className='about-me-title'>About me</p>
+							<p className='about-me-desc'>
+								I am a 18 year old student who aspires to be a software engineer
+								someday. I am currently learning in a full stack manner
+								including React and Spring Boot in future.
+							</p>
+						</div>
+						<div className='about-me-ref-container'></div>
+					</div>
+					<div className='tile-resources'>
+						<div className='resources-text-container'>
+							<p className='resources-title'>About me</p>
+							<p className='resources-desc'>
+								I am a 18 year old student who aspires to be a software engineer
+								someday. I am currently learning in a full stack manner
+								including React and Spring Boot in future.
+							</p>
+						</div>
+						<div className='resources-ref-container'>
+							<button className='proj-button'>Projects</button>
+							<button className='articles-button'>Articles</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className='footer'></div>
+		</>
+	);
 }

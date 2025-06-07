@@ -1,0 +1,83 @@
+* {
+	margin: 0;
+	font-family: "Bruno Ace", ui-sans-serif, system-ui;
+    color: white;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #0C0C0C;
+
+}
+
+.header{
+    max-height: 153px;
+    width: 100%;
+}
+
+.header > .navbar, .top-banner{
+    padding: 0px 11% 0px 11%;
+}
+
+.header > .top-banner {
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    flex-wrap: wrap;
+}
+
+.header > .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #5E5E5E;
+    border-bottom: 1px solid #5E5E5E;
+    background-color: #191919;
+    gap: 28%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.header > .navbar > .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.header > .navbar > .logo > img {
+    width: 74px;
+    height: 74px;
+    object-fit: cover;
+    border-radius: 22px;
+}
+
+.header > .navbar > .buttons-container{
+    max-width: 519px;
+    display: flex;
+    justify-content: space-between;
+
+    gap: 30px;
+    height: 100%;
+}
+
+.header > .navbar > .buttons-container > .navbar-button{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 1rem;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header > .navbar > .buttons-container > .navbar-button.active{
+    background-color: #0C0C0C;
+    box-shadow: inset 0px 0px 0px 1px #5E5E5E;
+}
