@@ -1,41 +1,168 @@
-.content-container, .footer{
-    width: 100%;
-    padding: 0px 11% 0px 11%;
-    border: 1px solid green;
+.content-container {
+	width: 100%;
 }
 
-
-
-.content-tile{
-    display: flex;
-    align-items: center;
-    border: 1px solid red;
-    height: 100%;
-    width: 100%;
+.content-tile {
+	display: grid;
+	grid-template-columns: 60% 40%;
+	height: 100%;
+	width: 100%;
+	border-bottom: 1px solid #5E5E5E;
+	padding: 0 11% 10vh 11%;
+	gap: 20px;
 }
 
 .content-tile > .content-intro-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 47vh;
-    padding-top: 13vh;
-    border-right:1px solid orange ;
-    padding-right: 10vw;
-    width: 65vw;
-    
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	overflow: hidden;	
+	height: 47vh;
+	padding-top: 3vh;
+	width: 100%;
 }
 
-.content-tile > .content-anim-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 21vh;
-    height: 100%;
-    width: 35vw;
+
+.content-tile > .content-intro-container > .intro > p {
+	font-size: 0.875rem;
+	color: #999999;
+	padding-bottom: 15px;
+
 }
 
-.content-tile > .content-anim-container > p{
-    font-size: 6rem;
+
+
+.content-tile > .content-intro-container > .intro > .intro-title > .big-text {
+	font-size: 3rem;
+	padding-bottom: 15px;
+}
+
+.content-tile > .content-intro-container > .intro > .intro-title > .small-text {
+	font-size: 0.875rem;
+	color: #838383;
+}
+
+.content-tile > .content-anim-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 5vh;
+	width: 35vw;
+
+}
+
+.content-tile > .content-anim-container > p {
+	font-size: 10rem;
+	display: flex;
+}
+
+.content-tiles{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	width: 100%;
+	height: 381px;
+	border-bottom: 1px solid #5E5E5E;
+	padding: 0 11% 0 11%;
+	gap: 70px;
+}
+
+
+.content-tiles > .tile-about-me, .tile-resources{
+	width: 100%;
+	height: 100%;
+	gap: 30px;
+display: flex;
+	gap: 20px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.content-tiles > .tile-about-me{
+	
+	border-right: 1px solid #5E5E5E;
+}
+
+
+
+.content-tiles > .tile-about-me > .about-me-text-container{
+	gap: 30px;
+	padding-right: 10px;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.content-tiles > .tile-about-me > .about-me-text-container > .about-me-title{
+	font-size: 2rem;
+}
+.content-tiles > .tile-about-me > .about-me-text-container > .about-me-desc{
+	font-size: 1.2rem;
+	line-height: 150%;
+	display: flex;
+	color: #999999;
+}
+
+.content-tiles > .tile-resources{
+	gap: 50px;
+	flex-direction: column;
+}
+
+.content-tiles >.tile-resources > .resources-text-container{
+	gap: 30px;
+	padding-right: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.content-tiles >.tile-resources > .resources-text-container > .resources-title{
+	font-size: 2rem;
+}
+
+.content-tiles >.tile-resources > .resources-text-container > .resources-desc{
+	font-size: 1.2rem;
+	line-height: 150%;
+	color: #999999;
+}
+
+.content-tiles > .tile-resources > .resources-ref-container{
+
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 70px;
+	height: 100%;
+	padding-right: 30px;
+}
+
+.content-tiles > .tile-resources > .resources-ref-container > .articles-button, .proj-button{
+	background: #0c0c0c00;
+	border: 1px solid #5E5E5E;
+	border-radius: 12px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: space-between;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.content-tiles > .tile-resources > .resources-ref-container > .articles-button:hover, .proj-button:hover{
+	background-color: #181818;
+	transform: translateX(5px);
+}
+
+
+.arrow{
+	width: 20px;
+}
+
+.arrow:hover{
+	transform: translateX(5px);
+    transition: transform 0.3s ease;
 }
 

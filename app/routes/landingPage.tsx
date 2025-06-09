@@ -1,5 +1,8 @@
+import { NavLink } from "react-router";
 import type { Route } from "./+types/landingPage";
 import "./landingPage.css";
+import Typewriter from "typewriter-effect";
+import clsx from "clsx";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -7,10 +10,6 @@ export function meta({}: Route.MetaArgs) {
 		{ name: "description", content: "Welcome to React Router!" },
 	];
 }
-
-
-
-
 
 export default function LandingPage() {
 	return (
@@ -24,13 +23,23 @@ export default function LandingPage() {
 								<p className='big-text'>Official SnapEQ's blog</p>
 								<p className='small-text'>
 									Dive into the world of my coding journey and see what my
-									current struggles are
+									current struggles are.
 								</p>
 							</div>
 						</div>
 					</div>
 					<div className='content-anim-container'>
-						<p>&lt;/&gt;</p>
+						<p>
+							<Typewriter
+								options={{
+									strings: ["</>"],
+									autoStart: true,
+									loop: true,
+									deleteSpeed: "natural",
+									delay: 200,
+								}}
+							/>
+						</p>
 					</div>
 				</div>
 				<div className='content-tiles'>
@@ -47,21 +56,30 @@ export default function LandingPage() {
 					</div>
 					<div className='tile-resources'>
 						<div className='resources-text-container'>
-							<p className='resources-title'>About me</p>
+							<p className='resources-title'>Resources</p>
 							<p className='resources-desc'>
-								I am a 18 year old student who aspires to be a software engineer
-								someday. I am currently learning in a full stack manner
-								including React and Spring Boot in future.
+								Feel free to check out my current and past projects as well as
+								my articles!
 							</p>
 						</div>
 						<div className='resources-ref-container'>
-							<button className='proj-button'>Projects</button>
-							<button className='articles-button'>Articles</button>
+							<NavLink
+								to={"/projects"}
+								className="proj-button">
+								Projects
+								<img src='../app/assets/arrow.svg' className="arrow"></img>
+							</NavLink>
+							<NavLink
+								to={"/articles"}
+								className="articles-button">
+								Articles
+								<img src='../app/assets/arrow.svg' className="arrow"></img>
+							</NavLink>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className='footer'></div>
+
 		</>
 	);
 }
