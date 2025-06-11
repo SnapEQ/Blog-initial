@@ -17,6 +17,7 @@ export default function Article({ loaderData }: Route.ComponentProps) {
 	return (
 		<>
 			<div className='article'>
+				<p>Id: {loaderData.id}</p>
 				<p>Title {loaderData.title}</p>
 			</div>
 		</>

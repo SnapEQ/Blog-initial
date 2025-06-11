@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import Header from "./header";
+import Footer from "./footer"
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -49,6 +50,7 @@ export default function App() {
 		<main>
 			<Header />
 			<Outlet />
+			<Footer />
 		</main>
 	);
 }

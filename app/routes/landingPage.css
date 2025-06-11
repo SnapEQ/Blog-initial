@@ -23,7 +23,7 @@
 }
 
 
-.content-tile > .content-intro-container > .intro > p {
+.content-tile > .content-intro-container > .intro > .typewriter {
 	font-size: 0.875rem;
 	color: #999999;
 	padding-bottom: 15px;
@@ -51,7 +51,7 @@
 
 }
 
-.content-tile > .content-anim-container > p {
+.content-tile > .content-anim-container > a {
 	font-size: 10rem;
 	display: flex;
 }
@@ -61,7 +61,7 @@
 	grid-template-columns: 50% 50%;
 	width: 100%;
 	height: 381px;
-	border-bottom: 1px solid #5E5E5E;
+	
 	padding: 0 11% 0 11%;
 	gap: 70px;
 }
@@ -71,7 +71,7 @@
 	width: 100%;
 	height: 100%;
 	gap: 30px;
-display: flex;
+	display: flex;
 	gap: 20px;
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -164,5 +164,6 @@ display: flex;
 .arrow:hover{
 	transform: translateX(5px);
     transition: transform 0.3s ease;
+	cursor: pointer;
 }
 

@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 import type { Route } from "./+types/landingPage";
 import "./landingPage.css";
 import Typewriter from "typewriter-effect";
-import clsx from "clsx";
+
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -29,17 +29,17 @@ export default function LandingPage() {
 						</div>
 					</div>
 					<div className='content-anim-container'>
-						<p>
+						<a>
 							<Typewriter
 								options={{
 									strings: ["</>"],
 									autoStart: true,
 									loop: true,
-									deleteSpeed: "natural",
+									deleteSpeed: 400,
 									delay: 200,
 								}}
 							/>
-						</p>
+						</a>
 					</div>
 				</div>
 				<div className='content-tiles'>
