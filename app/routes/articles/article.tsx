@@ -24,13 +24,23 @@ export async function action() {}
 export default function Article({ loaderData }: ArticleLoaderData) {
 
 
-
 	return (
 		<>
 			<div className='article'>
-				<p>Id: {loaderData.id}</p>
-				<p>Title: {loaderData.title}</p>
+				<h1>Id: {loaderData.id}</h1>
+				<h2>Title: {loaderData.title}</h2>
+				<p>Body: {loaderData.body}</p>
 			</div>
 		</>
 	);
+}
+
+
+export function ErrorBoundary({error} : {error: Error}){
+    return(
+        <div className="error">
+            <h2>Something went wrong when loading this article.</h2>
+            <pre>{error.message}</pre>
+        </div>
+    )
 }
