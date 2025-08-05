@@ -1,95 +1,80 @@
+'use client'
+
+import Link from "next/link";
+import "./landingPage.css";
+import Typewriter from "typewriter-effect";
+import arrow from "../../public/arrow.svg";
 import Image from "next/image";
-import styles from "./page.module.css";
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+export default function LandingPage() {
+	return (
+		<>
+			<div className='content-container'>
+				<div className='content-tile'>
+					<div className='content-intro-container'>
+						<div className='intro'>
+							<p>Your Knowledge About Me Begins Here</p>
+							<div className='intro-title'>
+								<p className='big-text'>Official SnapEQ's blog</p>
+								<p className='small-text'>
+									Dive into the world of my coding journey and see what my
+									current struggles are.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div className='content-anim-container'>
+						<a>
+							<Typewriter
+								options={{
+									strings: ["</>"],
+									autoStart: true,
+									loop: true,
+									deleteSpeed: 400,
+									delay: 200,
+								}}
+							/>
+						</a>
+					</div>
+				</div>
+				<div className='content-tiles'>
+					<div className='tile-about-me'>
+						<div className='about-me-text-container'>
+							<p className='about-me-title'>About me</p>
+							<p className='about-me-desc'>
+								I am a 18 year old student who aspires to be a software engineer
+								someday. I am currently learning in a full stack manner
+								including React and Spring Boot in future.
+							</p>
+						</div>
+						<div className='about-me-ref-container'></div>
+					</div>
+					<div className='tile-resources'>
+						<div className='resources-text-container'>
+							<p className='resources-title'>Resources</p>
+							<p className='resources-desc'>
+								Feel free to check out my current and past projects as well as
+								my articles!
+							</p>
+						</div>
+						<div className='resources-ref-container'>
+							<Link
+								href={"/projects"}
+								className="proj-button">
+								Projects
+								<Image src={arrow} alt="arrow" className="arrow" />
+							</Link>
+							<Link
+								href={"/articles"}
+								className="articles-button">
+								Articles
+								<Image src={arrow} alt="arrow" className="arrow" />
+							</Link>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+		</>
+	);
 }
