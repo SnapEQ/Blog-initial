@@ -6,14 +6,29 @@ import Link from "next/link";
 import silverSurferImage from "../../../public/silverS.jpg"
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useAuth } from "@/context/loginContext";
+import { useEffect, useState } from "react";
 
 export default function Header() {
-	const buttons: string[] = ["Home", "Blog", "Projects", "Contact", "Login"];
+	const { isAuthenticated } = useAuth();
+	const [mounted, setMounted] = useState(false);
 
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+	const buttons: string[] = isAuthenticated
+        ? ["Home", "Blog", "Projects", "Contact", "Logout"]
+        : ["Home", "Blog", "Projects", "Contact", "Login"];
     const pathname = usePathname();
 
+	
+
 	const buttonElements = buttons.map((btn: string) => {
+	
+
 		const path = btn.toLowerCase() === "home" ? "/" : `/${btn.toLowerCase()}`;
+
 
 		return (
 			<Link
@@ -35,7 +50,7 @@ export default function Header() {
 						<p>SnapEQ</p>
 					</div>
 					<div className='buttons-container'>
-						{buttonElements}
+						{mounted && buttonElements}
 					</div>
 				</div>
 			</div>

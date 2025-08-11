@@ -65,9 +65,9 @@ export default function LandingPage() {
 								<Image src={arrow} alt="arrow" className="arrow" />
 							</Link>
 							<Link
-								href={"/articles"}
+								href={"/blog"}
 								className="articles-button">
-								Articles
+								Blog
 								<Image src={arrow} alt="arrow" className="arrow" />
 							</Link>
 						</div>
