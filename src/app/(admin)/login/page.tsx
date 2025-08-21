@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import "./login.css"
-import { loginApi } from "./_actions/auth"
 import { useAuth } from "@/context/loginContext";
 import { useRouter } from "next/navigation";
+import { loginApi } from "@/app/_service/postApi";
 
 
 export default function LoginPage(){

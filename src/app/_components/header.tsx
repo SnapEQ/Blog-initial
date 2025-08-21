@@ -21,6 +21,7 @@ export default function Header() {
         ? ["Home", "Blog", "Projects", "Contact", "Logout"]
         : ["Home", "Blog", "Projects", "Contact", "Login"];
     const pathname = usePathname();
+	
 
 	
 
@@ -28,13 +29,16 @@ export default function Header() {
 	
 
 		const path = btn.toLowerCase() === "home" ? "/" : `/${btn.toLowerCase()}`;
+		const pathCopy = path === "/" ? "." : path;
+		const containsPath : boolean = pathname.includes(pathCopy);
+		
 
 
 		return (
 			<Link
 				key={btn}
 				href={path}
-				className = {`navbar-button ${pathname === path ? 'active' : ''}`}>
+				className = {`navbar-button ${containsPath ? 'active' : ''}`}>
 				{btn}
 			</Link>
 		);

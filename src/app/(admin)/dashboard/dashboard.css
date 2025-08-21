@@ -1,0 +1,8 @@
+.dashboard-layout{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.create-post-form-content, .create-post-form-title {
+    color: black;
+}
