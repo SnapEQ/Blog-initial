@@ -1,6 +1,6 @@
 
 
-import { deletePostById, getPostById, getPosts } from "../../../_service/postApi";
+import { getPostById, getPosts } from "../../../_service/postApi";
 import Post from "../components/post";
 import { PostType } from "../types/postTypes";
 

@@ -1,0 +1,44 @@
+.blog-container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    gap: 20px;
+    
+}
+
+.title-container, .button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.see-posts-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25rem;
+    height: 15rem;
+    background-color: #181818;
+    border: none;
+    border-radius: 8px;
+    font-size: 2rem;
+    box-shadow: 0px 4px 4px 0px rgba(179, 177, 177, 0.253);
+    transition: transform 0.3s ease-out;
+
+}
+
+.see-posts-button:hover{
+    background-color: #111111;
+    animation: pick 0.3s ease-out forwards;
+}
+
+@keyframes pick {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}

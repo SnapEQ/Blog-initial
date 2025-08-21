@@ -5,6 +5,7 @@
 //  - CHANGE THE DATATYPE OF REPO AND OPTIMIZE
 
 import { getFilteredRepos } from "../_service/githubApi";
+import "./projects.css";
 
 export default async function Projects(){
     
@@ -14,16 +15,16 @@ export default async function Projects(){
    console.log(data);
     return (
     <div>
-        <ul>
-            {data.map((repo) => (
-                <li key={repo.id}>
-                    {repo.name}
-                    <br />
-                    <a href={repo.url} rel="noopener noreferrer">Go to repo</a>
-                </li>
+        <div className="projects-container">
+            <ul className="projects-list">
+                {data.map((repo) => (
+                    <li key={repo.id} className="repo-bit">
+                        <p className="repo-name">{repo.name}</p>
+                        <a href={repo.url} rel="noopener noreferrer">Go to repo</a>
+                    </li>
                 
-            ))}
-        </ul>
-
+                ))}
+            </ul>
+        </div>
     </div>)
 }

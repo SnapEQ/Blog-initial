@@ -25,6 +25,12 @@ export default function Dashboard() {
         setToken(localStorage.getItem('token'));
     }, [])
 
+	const clearForm  = () => {
+		setTitle("");
+		setContent("");
+		setStatus("");
+	}
+
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -33,6 +39,8 @@ export default function Dashboard() {
             console.log(status);
             const res = await createPost(title, content, status, token);
             console.log(res);
+			clearForm();
+
         } catch (err: any){
             setError(err.message || 'Post creation failed');
         }

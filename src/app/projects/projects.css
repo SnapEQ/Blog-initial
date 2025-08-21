@@ -1,0 +1,12 @@
+.projects-list{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 50% 50%;
+    list-style: none;
+}
+
+.projects-list > .repo-bit{
+    display: grid;
+    grid-template-rows: 50% 50%;
+    
+}
