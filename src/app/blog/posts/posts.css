@@ -1,0 +1,127 @@
+
+.posts-container{
+    padding-left: 2rem;
+}
+
+
+
+.post {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #232526 0%, #191919 100%);
+    border: 1.5px solid #333;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25);
+    margin: 24px auto;
+    padding: 2rem 2.5rem;
+    width: 100%;
+    max-width: 700px;
+    transition: box-shadow 0.2s;
+}
+
+.post:hover {
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35);
+    border-color: #444;
+}
+
+.post-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.title-author-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.title-container .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.author-container .author-name {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    font-weight: 400;
+    margin: 0;
+}
+
+.content-container {
+    color: #e0e0e0;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin: 0.5rem 0 1.5rem 0;
+    word-break: break-word;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.button-container button {
+    background: #232526;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+}
+
+.button-container button:hover {
+    background: #333;
+    border-color: #888;
+    color: #ffecb3;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .post {
+        padding: 1.2rem 0.7rem;
+        max-width: 90vw;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .title-container .title {
+        font-size: 1.4rem;
+    }
+    .content-container {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .post {
+        padding: 0.8rem 0.3rem;
+        max-width: 85vw;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .title-container .title {
+        font-size: 1rem;
+    }
+    .content-container {
+        font-size: 0.8rem;
+    }
+    .button-container {
+   
+    justify-content: center;
+}
+}
+
+
+
+
+
+
+

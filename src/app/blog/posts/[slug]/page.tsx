@@ -4,6 +4,8 @@ import { getPostById, getPosts } from "../../../_service/postApi";
 import Post from "../components/post";
 import { PostType } from "../types/postTypes";
 
+import "../../posts/posts.css";
+
 export async function generateStaticParams() {
 	const posts: PostType[] = await getPosts();
 	return posts.map(post => ({
@@ -17,8 +19,13 @@ export default async function BlogPostPage({
 }: {
 	params: { slug: string };
 }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const post = await getPostById(slug);
 
-	return <Post key={post.id} post={post} />;
+	return (
+	<div className="single-post-container">
+		<Post key={post.id} post={post} />
+	</div>
+	);
+	
 }

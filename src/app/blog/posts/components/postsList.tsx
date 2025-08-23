@@ -14,7 +14,7 @@ type Props = {
 export default function PostList({initialPosts}: Props){
     const [posts, setPosts] = useState<PostType[]>(initialPosts);
     const [isPending, startTransition] = useTransition();
-    const { token} = useAuth();
+    const { token   } = useAuth();
     const router = useRouter();
 
 

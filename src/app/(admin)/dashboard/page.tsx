@@ -76,11 +76,14 @@ export default function Dashboard() {
                             type='radio' 
                             name='status' 
                             value='DRAFT' 
+							checked = {status === 'DRAFT'}
                             onChange={e => setStatus(e.target.value)}/> DRAFT
 							<input 
                             type='radio' 
                             name='status' 
-                            value='PUBLISHED' 
+                            value='PUBLISHED'
+							checked = {status === 'PUBLISHED'} 
+							required
                             onChange={e => setStatus(e.target.value)}/> PUBLISHED
                             <button type="submit">
                                 Create post
