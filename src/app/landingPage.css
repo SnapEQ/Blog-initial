@@ -165,3 +165,28 @@
     transition: transform 0.3s ease;
 	cursor: pointer;
 }
+
+@media (max-width: 920px) {
+	.content-tile{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.content-tile > .content-anim-container{
+		
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.content-tiles{
+		display: flex;
+		flex-direction: column;
+
+	}
+
+	.content-tiles > .tile-about-me{
+		border-right: none;
+		border-bottom: 1px solid #5E5E5E;
+	}
+}

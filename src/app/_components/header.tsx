@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 export default function Header() {
 	const { isAuthenticated } = useAuth();
 	const [mounted, setMounted] = useState(false);
+	const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         setMounted(true);
@@ -31,6 +32,8 @@ export default function Header() {
 
 		const path = btn.toLowerCase() === "home" ? "/" : `/${btn.toLowerCase()}`;
 		console.log(path);
+
+
 		
 		
 		const containsPath = pathname === path; 
@@ -39,7 +42,9 @@ export default function Header() {
 			<Link
 				key={btn}
 				href={path}
-				className = {`navbar-button ${containsPath  ? 'active' : ''}`}>
+				className = {`navbar-button ${containsPath  ? 'active' : ''}`}
+				onClick={() => setMenuOpen(false)}
+				>
 				{btn}
 			</Link>
 		);
@@ -54,9 +59,29 @@ export default function Header() {
 						<Image src={silverSurferImage} alt='silversurfer image' />
 						<p>SnapEQ</p>
 					</div>
+
+
+					{/* Hamburger for mobile */ }
+					<div className="hamburger" onClick={()=> setMenuOpen(!menuOpen)}>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+
+					{/* Desktop menu */}
+
 					<div className='buttons-container'>
 						{mounted && buttonElements}
 					</div>
+
+					{/* Mobile dropdown menu */}
+
+					{menuOpen && (
+						<div className="dropdown-menu">
+							{buttonElements}
+						</div>
+					)}
+
 				</div>
 			</div>
 		</>
