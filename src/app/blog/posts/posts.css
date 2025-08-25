@@ -1,9 +1,6 @@
-
 .posts-container{
     padding-left: 2rem;
 }
-
-
 
 .post {
     display: flex;
@@ -86,6 +83,9 @@
     border-color: #888;
     color: #ffecb3;
 }
+
+
+
 
 /* Responsive */
 @media (max-width: 800px) {

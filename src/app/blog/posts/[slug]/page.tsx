@@ -4,7 +4,8 @@ import { getPostById, getPosts } from "../../../_service/postApi";
 import Post from "../components/post";
 import { PostType } from "../types/postTypes";
 
-import "../../posts/posts.css";
+import "./singlePost.css";
+
 
 export async function generateStaticParams() {
 	const posts: PostType[] = await getPosts();
@@ -23,7 +24,7 @@ export default async function BlogPostPage({
 	const post = await getPostById(slug);
 
 	return (
-	<div className="single-post-container">
+	<div className="post-container">
 		<Post key={post.id} post={post} />
 	</div>
 	);

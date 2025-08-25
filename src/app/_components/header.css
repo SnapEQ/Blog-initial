@@ -110,6 +110,12 @@
     padding: 10px 30px;
     font-size: 1.1rem;
     justify-content: flex-start;
+    text-decoration: none;
+}
+
+.dropdown-menu .navbar-button:hover{
+    background-color: #0C0C0C;
+    
 }
 
 @media (max-width: 1200px) {

@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
 type AuthContextType = {
     token: string | null;
@@ -11,10 +11,31 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+
+function isTokenExpired(token: string | null): boolean {
+    if(!token) return true;
+    try{
+        // JWT format: header.payload.signature
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        if(!payload.exp) return true;
+        return Date.now() >= payload.exp * 1000;
+    } catch {
+        return true;
+    }
+}
+
 export function AuthProvider({ children } : { children: ReactNode }) {
     const [token, setToken] = useState<string | null>(
         typeof window !== "undefined" ? localStorage.getItem("token") : null
     );
+
+
+    useEffect(() => {
+        if(token && isTokenExpired(token)){
+            logout();
+        }
+    }, [token]);
+
 
     const login = (newToken: string, expiresIn: string) => {
         setToken(newToken);
