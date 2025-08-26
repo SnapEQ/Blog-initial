@@ -1,12 +1,78 @@
-.projects-list{
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 50% 50%;
-    list-style: none;
+
+.projects-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.projects-wrapper{
+    margin: 50px auto 0 auto;
+    width: 100%;
+    max-width: 1200px;
 }
 
-.projects-list > .repo-bit{
+.projects-list{
     display: grid;
-    grid-template-rows: 50% 50%;
-    
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Center the grid */
+    max-width: 1200px; /* 3 columns * 400px max + gaps */
+    min-width: 840px; 
 }
+
+.repo-bit{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 2rem;
+    max-width: 400px;
+    min-height: 200px;
+    background-color: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 6px;
+}
+
+.ref-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid #89929b;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #21262d;
+}
+
+a:hover {
+   background-color: #13171d;
+
+}
+
+@media (max-width: 900px) {
+    .projects-list {
+        grid-template-columns: repeat(2, 1fr);
+        min-width: 560px;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-list {
+        grid-template-columns: 1fr;
+        min-width: 0;
+    }
+}
+
+
+

@@ -14,17 +14,21 @@ export default async function Projects(){
     
    console.log(data);
     return (
-    <div>
         <div className="projects-container">
-            <ul className="projects-list">
+            <div className="projects-wrapper">
+                <ul className="projects-list">
                 {data.map((repo) => (
                     <li key={repo.id} className="repo-bit">
-                        <p className="repo-name">{repo.name}</p>
-                        <a href={repo.url} rel="noopener noreferrer">Go to repo</a>
+                        <div className="name-wrapper">
+                            <p className="repo-name">{repo.name}</p>
+                        </div>
+                        <div className="ref-wrapper">
+                            <a href={repo.url} rel="noopener noreferrer">Go to repo</a>
+                        </div> 
                     </li>
-                
                 ))}
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>)
+    )
 }
