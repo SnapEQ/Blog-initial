@@ -49,7 +49,7 @@ export function AuthProvider({ children } : { children: ReactNode }) {
         localStorage.removeItem("token_expiry");
     };
 
-    const isAuthenticated = !!token;
+    const isAuthenticated = !!token && !isTokenExpired(token);
 
     return (
         <AuthContext.Provider value={{token, login, logout, isAuthenticated}}>

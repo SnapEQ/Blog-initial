@@ -21,14 +21,19 @@ export default function Post({ post, onDelete} : Props){
         router.push(`/blog/posts/${post.id}`)
     }
 
-    const {isAuthenticated, token} = useAuth();
-    const [mounted, setMounted] = useState(false);
-    const [isSingle, setIsSingle] = useState(false);
+    const {isAuthenticated} = useAuth();
+    const [mounted, setMounted] = useState<boolean>(false);
+    const [isSingle, setIsSingle] = useState<boolean>(false);
+    const [postContent, setPostContent] = useState<string>(post.content);
 
     useEffect(() => {
         setMounted(true);
         if(pathname.includes(post.id)){
             setIsSingle(true);
+        } else {
+            if(postContent.length > 100){
+                setPostContent(postContent.substring(0,100) + " ...")
+            }
         }
         } , []);
 
@@ -49,7 +54,7 @@ export default function Post({ post, onDelete} : Props){
             
 
             <div className="content-container">
-                <p className="content">{post.content}</p>
+                <p className="content">{postContent}</p>
             </div>
 
             
