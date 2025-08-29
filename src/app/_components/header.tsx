@@ -9,6 +9,13 @@ import Image from "next/image";
 import { useAuth } from "@/context/loginContext";
 import { useEffect, useState } from "react";
 
+
+type NavButton = {
+	label: string;
+	href: string;
+	isActive: (pathname: string) => boolean
+}
+
 export default function Header() {
 	const { isAuthenticated } = useAuth();
 	const [mounted, setMounted] = useState(false);
@@ -18,34 +25,55 @@ export default function Header() {
         setMounted(true);
     }, []);
 
-	const buttons: string[] = isAuthenticated
-        ? ["Home", "Blog", "Projects", "Contact", "Logout"]
-        : ["Home", "Blog", "Projects", "Contact", "Login"];
     const pathname = usePathname();
-	console.log(pathname);
-		
+	
+	const navButtons: NavButton[] = [	
+        {
+            label: "Home",
+            href: "/",
+            isActive: (p) => p === "/",
+        },
+        {
+            label: "Blog",
+            href: "/blog",
+            isActive: (p) => p.startsWith("/blog"),
+        },
+        {
+            label: "Projects",
+            href: "/projects",
+            isActive: (p) => p.startsWith("/projects"),
+        },
+        {
+            label: "Contact",
+            href: "/contact",
+            isActive: (p) => p.startsWith("/contact"),
+        },
+        {
+            label: isAuthenticated ? "Logout" : "Login",
+            href: isAuthenticated ? "/logout" : "/login",
+            isActive: (p) => isAuthenticated ? p.startsWith("/logout") : p.startsWith("/login"),
+        },
+	];
 
 	
 
-	const buttonElements = buttons.map((btn: string) => {
+	const buttonElements = navButtons.map((btn) => {
 	
 
-		const path = btn.toLowerCase() === "home" ? "/" : `/${btn.toLowerCase()}`;
-		console.log(path);
+		
 
 
 		
 		
-		const containsPath = pathname === path; 
 
 		return (
 			<Link
-				key={btn}
-				href={path}
-				className = {`navbar-button ${containsPath  ? 'active' : ''}`}
+				key={btn.label}
+				href={btn.href}
+				className = {`navbar-button ${btn.isActive(pathname) ? " active": "" }`}
 				onClick={() => setMenuOpen(false)}
 				>
-				{btn}
+				{btn.label}
 			</Link>
 		);
 	});

@@ -16,10 +16,14 @@ interface GitHubRepoResponse {
 
 
  async function getRepos(username:string): Promise<GitHubRepoResponse[]>{
-    const res = await 
-    fetch(`https://api.github.com/users/${username}/repos`);
-    if(!res.ok) throw new Error("Invalid get request");
-    return await res.json();
+    try {
+        const res = await 
+        fetch(`https://api.github.com/users/${username}/repos`);
+        if(!res.ok) throw new Error("Unable to fetch repos");
+        return await res.json();
+    } catch (error){
+        throw new Error("Unable to fetch repos")
+    }
 }
 
 function filterRepos(repos: GitHubRepoResponse[]) : Repo[]{

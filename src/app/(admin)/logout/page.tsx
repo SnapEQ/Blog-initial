@@ -1,12 +1,20 @@
 'use client'
 
 import { useAuth } from "@/context/loginContext"
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
+import { useLayoutEffect } from "react";
 
 export default function LogoutPage(){
 
     const { logout, isAuthenticated } = useAuth();
     const router = useRouter();
+
+    useLayoutEffect(() => {
+            const isAuth = isAuthenticated
+            if (!isAuth){
+                redirect("/")
+            }
+        }, [])
 
     const handleLogout = () => {
         logout();

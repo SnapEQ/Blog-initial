@@ -10,6 +10,7 @@ module.exports = {
       fullUrl: true
     }
   }
+  
 }
 
 export default nextConfig;

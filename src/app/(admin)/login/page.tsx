@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import "./login.css"
 import { useAuth } from "@/context/loginContext";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { loginApi } from "@/app/_service/postApi";
 
 
@@ -14,7 +14,12 @@ export default function LoginPage(){
     const router = useRouter();
     const { login, isAuthenticated } = useAuth();
 
-
+    useLayoutEffect(() => {
+        const isAuth = isAuthenticated
+        if (isAuth){
+            redirect("/")
+        }
+    }, [])
     
 
     const handleSubmit = async (e: React.FormEvent) => {

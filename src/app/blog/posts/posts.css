@@ -27,6 +27,8 @@
     gap: 1.5rem;
 }
 
+
+
 .title-author-wrapper {
     display: flex;
     flex-direction: column;
@@ -112,24 +114,14 @@
 
 @media (max-width: 500px) {
     .post {
-        padding: 0.8rem 0.3rem;
+        padding: 0.9rem 0.6rem;
         max-width: 85vw;
         margin-left: 0;
         margin-right: 0;
     }
 
 
-    .title-container .title {
-        font-size: 1.2rem;
-    }
 
-    .author-container .author-name{
-        font-size: 0.7rem;
-    }
-
-    .content-container {
-        font-size: 0.8rem;
-    }
     .button-container {
         justify-content: center;
     }

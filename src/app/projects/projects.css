@@ -18,8 +18,8 @@
     gap: 30px;
     list-style: none;
     padding: 0;
-    margin: 0 auto; /* Center the grid */
-    max-width: 1200px; /* 3 columns * 400px max + gaps */
+    margin: 0 auto; 
+    max-width: 1200px; 
     min-width: 840px; 
 }
 
@@ -34,6 +34,19 @@
     background-color: #161b22;
     border: 1px solid #21262d;
     border-radius: 6px;
+}
+
+.star-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.star{
+
 }
 
 .ref-wrapper{

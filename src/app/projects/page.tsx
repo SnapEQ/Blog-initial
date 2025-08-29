@@ -1,11 +1,8 @@
 
-
-
-//  TO DO
-//  - CHANGE THE DATATYPE OF REPO AND OPTIMIZE
-
 import { getFilteredRepos } from "../_service/githubApi";
 import "./projects.css";
+import Image from "next/image";
+import star from "../../../public/star.svg"
 
 export default async function Projects(){
     
@@ -19,6 +16,10 @@ export default async function Projects(){
                 <ul className="projects-list">
                 {data.map((repo) => (
                     <li key={repo.id} className="repo-bit">
+                        <div className="star-wrapper">
+                            <Image  src={star} alt="github star icon" className="star"/>
+                            <p className="stargazers-count">{repo.stars}</p>
+                        </div>
                         <div className="name-wrapper">
                             <p className="repo-name">{repo.name}</p>
                         </div>
